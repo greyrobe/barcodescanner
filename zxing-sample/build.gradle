@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 dependencies {
     //compile project(":zxing")
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.google.android.gms:play-services-maps:11.6.2'
+    implementation 'com.android.support:appcompat-v7:25.4.0'
     compile libraries.barcodescanner_zxing
     compile libraries.support_v4
     compile libraries.appcompat_v7
