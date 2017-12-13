@@ -163,7 +163,7 @@
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="317dp"
-                    android:layout_height="101dp"
+                    android:layout_height="33dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:gravity="center"
@@ -226,6 +226,21 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3"
                     app:layout_constraintVertical_bias="0.333" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="271dp"
+                    android:layout_height="89dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/accent"
+                    android:color="#9b221a"
+                    android:text="Transfer savings to my Vanguard Account"
+                    android:textColor="@color/icons"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
 
         </android.support.constraint.ConstraintLayout>
