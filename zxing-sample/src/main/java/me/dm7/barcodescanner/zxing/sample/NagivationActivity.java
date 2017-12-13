@@ -46,6 +46,12 @@ public class NagivationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void launchMapActivity(View v) {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+
     public void launchActivity(Class<?> clss) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {

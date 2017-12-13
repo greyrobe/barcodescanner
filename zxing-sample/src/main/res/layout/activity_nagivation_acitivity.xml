@@ -69,6 +69,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/viewfinder_border"
                     android:text="Map"
+                    android:onClick="launchMapActivity"
                     android:textColor="@color/icons"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"

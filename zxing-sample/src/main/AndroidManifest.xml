@@ -45,22 +45,6 @@
             android:label="@string/title_activity_product"
             android:theme="@style/AppTheme"></activity>
 
-        <activity
-            android:name=".SimpleScannerFragmentActivity"
-            android:label="@string/simple_scanner_fragment_activity"
-            android:theme="@style/AppOverlayTheme" />
-        <activity
-            android:name=".FullScreenScannerFragmentActivity"
-            android:label="@string/full_screen_scanner_fragment_activity"
-            android:theme="@style/AppOverlayTheme" />
-        <activity
-            android:name=".CustomViewFinderScannerActivity"
-            android:label="@string/custom_view_finder_scanner_activity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ScalingScannerActivity"
-            android:label="@string/scaling_scanner_activity"
-            android:theme="@style/AppTheme" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
