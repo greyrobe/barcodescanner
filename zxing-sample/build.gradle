@@ -6,15 +6,23 @@ dependencies {
     implementation 'com.android.support:design:25.4.0'
     implementation 'com.android.support:support-vector-drawable:25.4.0'
     implementation 'com.android.support:support-v4:25.4.0'
+    implementation 'com.google.android.gms:play-services-location:11.6.2'
+    implementation 'com.google.android.gms:play-services-maps:11.6.2'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
     compile libraries.barcodescanner_zxing
     compile libraries.support_v4
     compile libraries.appcompat_v7
     compile libraries.design_support
+
 }
 
 android {
     defaultConfig {
         applicationId "${project.group}.zxing.sample"
         vectorDrawables.useSupportLibrary = true
+    }
+    dexOptions {
+        jumboMode true
+        javaMaxHeapSize "4g"
     }
 }
