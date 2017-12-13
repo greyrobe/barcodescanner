@@ -94,6 +94,7 @@
                     android:backgroundTint="@color/viewfinder_laser"
                     android:text="Deals"
                     android:textSize="24sp"
+                    android:onClick="launchDealsActivity"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/button12"
                     app:layout_constraintStart_toStartOf="parent"

@@ -14,7 +14,8 @@ public class InvestingGoalActivity extends AppCompatActivity {
     SeekBar currentAgeBar, retirementAgeBar;
     TextView monthlySavingsTxt, currentAgeTxt, retirementAgeTxt, totalRetirementSavingsTxt, totalRetirementBonusIncomeTxt;
     int currentAge, retirementAge, yearsUntilRetirement;
-    double monthlySavings, annualYield;
+    public static double monthlySavings = 0;
+    double annualYield;
     DecimalFormat demicalFormat = new DecimalFormat(".##");
     final static int COMPOUNDS_PER_YEAR = 12;
     @Override
@@ -23,8 +24,6 @@ public class InvestingGoalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_investing_goal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        monthlySavings = 100.00;
         annualYield = .05;
 
         currentAgeBar = (SeekBar) findViewById(R.id.seekBar);

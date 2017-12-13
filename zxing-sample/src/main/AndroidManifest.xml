@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.dm7.barcodescanner.zxing.sample">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,12 +22,20 @@
         <activity
             android:name=".SimpleScannerActivity"
             android:label="@string/simple_scanner_activity"
-            android:theme="@style/AppOverlayTheme"></activity>
+            android:theme="@style/AppOverlayTheme" />
         <activity
             android:name=".InvestingGoalActivity"
             android:label="@string/investment_goal_activity"
             android:theme="@style/AppOverlayTheme"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DealListActivity"
+            android:label="@string/deal_activity"
+            android:theme="@style/AppOverlayTheme" />
+        <activity
+            android:name=".ProductActivity"
+            android:label="@string/title_activity_product"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

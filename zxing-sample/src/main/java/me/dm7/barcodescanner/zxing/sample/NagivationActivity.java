@@ -35,8 +35,14 @@ public class NagivationActivity extends AppCompatActivity {
     public void launchScanActivity(View v) {
         launchActivity(SimpleScannerActivity.class);
     }
+
     public void launchGoalActivity(View v) {
         Intent intent = new Intent(this, InvestingGoalActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchDealsActivity(View v) {
+        Intent intent = new Intent(this, DealListActivity.class);
         startActivity(intent);
     }
 
