@@ -218,19 +218,20 @@
                     android:layout_width="29dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="156dp"
+                    android:layout_marginEnd="132dp"
                     android:layout_marginTop="8dp"
                     android:text="%"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@+id/editText4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3"
-                    app:layout_constraintVertical_bias="0.333" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <Button
                     android:id="@+id/button"
                     android:layout_width="271dp"
-                    android:layout_height="89dp"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
@@ -238,6 +239,8 @@
                     android:color="#9b221a"
                     android:text="Transfer savings to my Vanguard Account"
                     android:textColor="@color/icons"
+                    android:onClick="resetMonthlySavings"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView10" />
