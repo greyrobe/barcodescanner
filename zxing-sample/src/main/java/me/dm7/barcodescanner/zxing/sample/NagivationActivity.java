@@ -4,21 +4,26 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class NagivationActivity extends AppCompatActivity {
     private static final int ZXING_CAMERA_PERMISSION = 1;
     private Class<?> mClss;
 
     @Override
-    public void onCreate(Bundle state) {
-        super.onCreate(state);
-        setContentView(R.layout.activity_main);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_nagivation_acitivity);
         setupToolbar();
     }
 
@@ -27,8 +32,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
-    public void launchSimpleActivity(View v) {
+    public void launchScanActivity(View v) {
         launchActivity(SimpleScannerActivity.class);
+    }
+    public void launchGoalActivity(View v) {
+        Intent intent = new Intent(this, InvestingGoalActivity.class);
+        startActivity(intent);
     }
 
     public void launchActivity(Class<?> clss) {
@@ -58,4 +67,5 @@ public class MainActivity extends AppCompatActivity {
                 return;
         }
     }
+
 }
