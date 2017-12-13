@@ -65,7 +65,7 @@ public class ProductDeal implements Serializable {
 
     @Override
     public String toString() {
-        return "UID: " + uid + " $" + String.valueOf(savings) + " off " + name;
+        return " $" + String.valueOf(savings) + " off on " + name;
     }
 
 }
