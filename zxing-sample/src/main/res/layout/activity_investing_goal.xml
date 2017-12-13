@@ -239,6 +239,7 @@
                     android:color="#9b221a"
                     android:text="Transfer savings to my Vanguard Account"
                     android:textColor="@color/icons"
+                    android:onClick="resetMonthlySavings"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

@@ -3,20 +3,22 @@ package me.dm7.barcodescanner.zxing.sample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class InvestingGoalActivity extends AppCompatActivity {
     SeekBar currentAgeBar, retirementAgeBar;
     TextView monthlySavingsTxt, currentAgeTxt, retirementAgeTxt, totalRetirementSavingsTxt, totalRetirementBonusIncomeTxt;
     int currentAge, retirementAge, yearsUntilRetirement;
-    public static double monthlySavings = 0;
+    public static double monthlySavings = 0.00;
     double annualYield;
-    DecimalFormat demicalFormat = new DecimalFormat(".##");
+    NumberFormat demicalFormat = new DecimalFormat("#0.00");
     final static int COMPOUNDS_PER_YEAR = 12;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,5 +87,10 @@ public class InvestingGoalActivity extends AppCompatActivity {
 
     public double getTotalRetirementBonusIncome() {
         return monthlySavings * ( ( Math.pow( (1 + (annualYield / COMPOUNDS_PER_YEAR)),yearsUntilRetirement * COMPOUNDS_PER_YEAR ) - 1 ) / (annualYield / COMPOUNDS_PER_YEAR) );
+    }
+
+    public void resetMonthlySavings(View v) {
+        monthlySavings = 0.00;
+        monthlySavingsTxt.setText("$" +  demicalFormat.format(monthlySavings));
     }
 }
