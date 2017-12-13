@@ -14,6 +14,7 @@ public class ProductDeal implements Serializable {
     String name;
     double lat, lon;
 
+
     public String getUid() {
         return uid;
     }

@@ -1,9 +1,12 @@
 package me.dm7.barcodescanner.zxing.sample;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -30,8 +33,6 @@ import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.datatype.Duration;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -78,6 +79,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
         mLocationSource = new LongPressLocationSource();
+
+
 
     }
 
@@ -134,6 +137,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         mlocListener = new MyLocationListener(mMap, myLocationMarker);
+        mlocListener.setTargets(DealList.products);
         mlocManager.requestLocationUpdates( LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
     }
 
@@ -291,5 +295,78 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+
+    public class MyLocationListener implements LocationListener {
+
+        GoogleMap mMap;
+        Marker mMarker;
+        List<ProductDeal> mDeals;
+
+        public MyLocationListener(GoogleMap map, Marker marker) {
+            super();
+            mMap = map;
+            mMarker = marker;
+        }
+
+//        private void setTargets(ArrayList<DealLocation> dealLocations) {
+        private void setTargets(List<ProductDeal> dealLocations) {
+
+            mDeals = dealLocations;
+        }
+
+        @Override
+        public void onLocationChanged(Location location) {
+
+            LatLng pos=new LatLng(location.getLatitude(), location.getLongitude());
+
+            if(mMarker == null){
+                mMarker = mMap.addMarker(new MarkerOptions().position(pos).icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_location)));
+            }
+            else {
+                mMarker.setPosition(pos);
+            }
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
+
+
+
+            if( mDeals != null) {
+                for (ProductDeal dl: mDeals) {
+
+                    Location current = new Location("my_pos");
+                    current.setLatitude(pos.latitude);
+                    current.setLongitude(pos.longitude);
+
+                    Location target = new Location("target");
+                    target.setLatitude(dl.getLat());
+                    target.setLongitude(dl.getLon());
+
+                    if( current.distanceTo(target) < 100 ) {
+
+                        Toast.makeText(getApplicationContext(), "Deal Found: " + dl.getName() + " Shop to Invest!", Toast.LENGTH_LONG).show();
+//                          getCurrentFocus() == MapsActivity
+//                        Activity currentActivity = ((MyApp)context.getApplicationContext()).getCurrentActivity();
+//                        startActivity(new Intent(getApplicationContext(), DealListActivity.class));
+                    }
+                }
+            }
+        }
+
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+    }
 
 }
