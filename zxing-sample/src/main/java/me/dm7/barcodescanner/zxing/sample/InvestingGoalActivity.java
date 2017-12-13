@@ -37,7 +37,7 @@ public class InvestingGoalActivity extends AppCompatActivity {
         totalRetirementBonusIncomeTxt = (TextView) findViewById(R.id.textView9);
 
 
-        monthlySavingsTxt.setText("$" + demicalFormat.format(monthlySavings);
+        monthlySavingsTxt.setText("$" + demicalFormat.format(monthlySavings));
 
         currentAge = currentAgeBar.getProgress();
         currentAgeTxt.setText("Current Age: " + String.valueOf(currentAge));
@@ -86,7 +86,9 @@ public class InvestingGoalActivity extends AppCompatActivity {
     }
 
     public double getTotalRetirementBonusIncome() {
-        return monthlySavings * ( ( Math.pow( (1 + (annualYield / COMPOUNDS_PER_YEAR)),yearsUntilRetirement * COMPOUNDS_PER_YEAR ) - 1 ) / (annualYield / COMPOUNDS_PER_YEAR) );
+        return monthlySavings * (
+                ( Math.pow( (1 + (annualYield / COMPOUNDS_PER_YEAR)),yearsUntilRetirement * COMPOUNDS_PER_YEAR ) - 1 )
+                        / (annualYield / COMPOUNDS_PER_YEAR) );
     }
 
     public void resetMonthlySavings(View v) {
